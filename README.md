@@ -105,26 +105,6 @@ setTimeout(function(){ ... }, 2000); // 2 seconds instead of 1
 4. Try increasing the timeout value
 5. Clear your browser cache and any caching plugins
 
-### Form Validation Issues
-
-If you experience form validation issues, ensure your form processing can handle the DD/MM/YYYY format. If not, you may need to convert the date back to YYYY-MM-DD during form submission:
-
-```javascript
-// Add this to the script to convert date format on submission
-$('.elementor-form').on('submit', function() {
-    $('.flatpickr-input').each(function() {
-        var dateVal = $(this).val();
-        if (dateVal) {
-            var parts = dateVal.split('/');
-            if (parts.length === 3) {
-                var newDate = parts[2] + '-' + parts[1] + '-' + parts[0];
-                $(this).val(newDate);
-            }
-        }
-    });
-});
-```
-
 ## Compatibility
 
 - Works with Elementor Pro forms
